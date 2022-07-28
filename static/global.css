@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora&family=Poppins&display=swap");
+
+:root {
+  --fg: #cdd6f4;
+  --subtext: #a6adc8;
+  --bg: #1e1e2e;
+  --surface: #45475a;
+  --link: #89b4fa;
+  --red: #f38ba8;
+  --green: #a6e3a1;
+  --card-bg: rgba(49, 50, 68, 0.5);
+}
+
+:root[data-theme="light"] {
+  --fg: #181825;
+  --subtext: #45475a;
+  --bg: #cdd6f4;
+  --surface: #bac2de;
+  --card-bg: rgba(186, 194, 222, 0.5);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+::selection {
+  background: var(--fg);
+  color: var(--bg);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  border: none;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 16px;
+  transition: background 0.4s ease;
+}
+
+::-webkit-scrollbar-track:hover {
+  background: var(--card-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--fg);
+  border-radius: 16px;
+}

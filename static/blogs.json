@@ -1,0 +1,26 @@
+{
+	"example": {
+		"title": "Example",
+		"tags": ["example", "lorem"]
+	},
+	"sveltekit": {
+		"title": "SvelteKit",
+		"tags": ["svelte", "sveltekit", "js"]
+	},
+	"freecodecamp": {
+		"title": "freeCodeCamp",
+		"tags": ["freecodecamp", "study", "coding"]
+	},
+	"free-programming-books": {
+		"title": "Free Programming Books",
+		"tags": ["programming books", "books"]
+	},
+	"coding-interview-university": {
+		"title": "Coding Interview University",
+		"tags": ["coding", "interview", "lorem"]
+	},
+	"awesome": {
+		"title": "Awesome",
+		"tags": ["coding", "study", "lorem"]
+	}
+}
