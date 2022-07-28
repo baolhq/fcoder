@@ -12,11 +12,12 @@
 }
 
 :root[data-theme="light"] {
-  --fg: #181825;
-  --subtext: #45475a;
-  --bg: #cdd6f4;
-  --surface: #bac2de;
-  --card-bg: rgba(186, 194, 222, 0.5);
+  --fg: #4c4f69;
+  --subtext: #6c6f85;
+  --bg: #eff1f5;
+  --surface: #acb0be;
+  --link: #7287fd;
+  --card-bg: #dce0e8;
 }
 
 html {

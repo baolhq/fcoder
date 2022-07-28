@@ -52,6 +52,9 @@
     // Start timer
     if (e.key !== "Tab" && startTime === undefined) startTime = new Date();
 
+    // Ignore meta keys
+    if (e.key === "Alt" || e.key === "Control") return;
+
     let val = typer.value.trim();
     let currentWord = words[currentIndex];
     let prevWord = words[currentIndex - 1];
@@ -76,8 +79,9 @@
         tpWrongWords.update((v) => ++v);
       }
 
-      // Highlight next word
+      // Highlight and scroll to next word
       currentWord.style.color = "var(--link)";
+      currentWord.scrollIntoView({ behaviour: "smooth" });
 
       typer.value = "";
       placeholder = currentWord.innerHTML;
@@ -125,7 +129,7 @@
   .form {
     position: relative;
     margin: auto;
-    height: 400px;
+    height: 40%;
     width: 100%;
   }
   .content,
@@ -142,6 +146,7 @@
     top: 0;
     font-size: 1.2em;
     word-spacing: 0.2em;
+    letter-spacing: 0.04em;
     overflow-y: scroll;
     height: calc(100% - 86px);
     color: var(--subtext);

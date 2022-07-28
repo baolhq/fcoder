@@ -2,7 +2,7 @@
   <title>About - FCoder</title>
 </svelte:head>
 
-<h1 align="center">Tecka</h1>
+<h1 align="center">FCoder</h1>
 <h4 align="center">
   A minimal blog page built with <a
     href="https://kit.svelte.dev/"
@@ -27,10 +27,10 @@
 </p>
 <pre><code
     ># Clone this repository
-$ git clone https://github.com/baolhq/tecka
+$ git clone https://github.com/baolhq/fcoder
 
 # Go into the repository
-$ cd tecka
+$ cd fcoder
 
 # Install dependencies
 $ yarn
@@ -56,8 +56,8 @@ $ yarn dev
     target="__blank">emailware</a
   >. Meaning, if you liked using this app or it has helped you in any way, I’d
   like you send me an email at
-  <a href="mailto:quocbao.kaiser@gmail.com">quocbao.kaiser@gmail.com</a> about anything
-  you’d want to say about this software. I’d really appreciate it!
+  <a href="mailto:baolhqce150509@fpt.edu.vn">baolhqce150509@fpt.edu.vn</a> about
+  anything you’d want to say about this software. I’d really appreciate it!
 </p>
 <h2 id="credits">Credits</h2>
 <p>This software uses the following open source packages:</p>
@@ -100,7 +100,7 @@ $ yarn dev
 </ul>
 <h2 id="license">License</h2>
 <p>
-  <a href="https://github.com/baolhq/tecka/blob/main/LICENSE" target="__blank"
+  <a href="https://github.com/baolhq/fcoder/blob/main/LICENSE" target="__blank"
     >MIT</a
   >
 </p>
