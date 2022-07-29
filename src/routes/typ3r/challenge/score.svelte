@@ -9,7 +9,7 @@
     tpSeconds,
     tpCorrectWords,
     tpWrongWords,
-  } from "../../store.js";
+  } from "../../../store.js";
 
   let wpm = 0;
   let showHint = false;
@@ -27,6 +27,11 @@
     playArcAnimation();
 
     document.addEventListener("keydown", (e) => {
+      // Reset the test
+      if (e.key === "Tab") {
+        e.preventDefault();
+        goto(`/typ3r`);
+      }
       // Prevent f5 on this page because it may lead to losing data
       if (e.key === "F5" && $page.url.pathname === "/typ3r/score") {
         e.preventDefault();
@@ -111,7 +116,7 @@
 </script>
 
 <svelte:head>
-  <title>Score - FCoder</title>
+  <title>Challenge Score - FCoder</title>
 </svelte:head>
 
 <div class="container">
@@ -133,7 +138,7 @@
   </h3>
   {#if showHint}
     <p in:fade={{ duration: 400 }}>
-      Press <code>Tab</code> to restart the test
+      {$page.url.searchParams.get("title")}
     </p>
   {:else}
     <p><code class="placeholder" /></p>
@@ -156,7 +161,7 @@
     justify-content: space-between;
   }
   p {
-    color: var(--surface);
+    color: var(--subtext);
     text-align: center;
     margin-top: 3rem;
   }

@@ -35,16 +35,23 @@
     <a href="/typ3r" transition:fade={{ duration: 400 }} title="Typ3r">
       <ion-icon name="speedometer-outline" />
     </a>
+    <a
+      href="/typ3r/challenge"
+      transition:fade={{ duration: 500 }}
+      title="Challenge"
+    >
+      <ion-icon name="podium-outline" />
+    </a>
     <button
       on:click={toggleDarkMode}
-      transition:fade={{ duration: 500 }}
+      transition:fade={{ duration: 600 }}
       title="Toggle Dark Mode"
     >
       <ion-icon
         name={$theme === "light" ? "partly-sunny-outline" : "moon-outline"}
       />
     </button>
-    <a href="/about" transition:fade={{ duration: 600 }} title="About">
+    <a href="/about" transition:fade={{ duration: 700 }} title="About">
       <ion-icon name="help-outline" />
     </a>
   </div>
@@ -65,7 +72,7 @@
   }
   a,
   button {
-    margin-top: 24px;
+    margin-top: 18px;
     padding: 0 8px;
   }
   a:hover,

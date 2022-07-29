@@ -21,6 +21,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"firebase": "^9.9.1",
 		"marked": "^4.0.18"
 	},
 	"engines": {

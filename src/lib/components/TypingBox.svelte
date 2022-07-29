@@ -1,7 +1,7 @@
 <script>
   import { onMount, tick } from "svelte";
   import { goto } from "$app/navigation";
-  import { rot13 } from "$lib/scripts/utils";
+  import { rot13, buildUrl } from "$lib/scripts/utils";
   import {
     tpScore,
     tpSeconds,
@@ -10,6 +10,9 @@
   } from "../../store.js";
 
   export let sample = "";
+  // For challenge
+  export let isChallenge = false;
+  export let title = "";
 
   let content = "";
   let placeholder = "";
@@ -103,11 +106,14 @@
   };
 
   const showResult = () => {
+    console.log(isChallenge);
     endTime = new Date();
     let timeDiff = endTime - startTime;
     // Miliseconds to seconds
     tpSeconds.set(timeDiff / 1000);
-    goto(`/typ3r/score`, true);
+    console.log(isChallenge);
+    if (isChallenge) goto(`/typ3r/challenge/score?title=${title}`, true);
+    else goto(`/typ3r/score`, true);
   };
 </script>
 
