@@ -1,6 +1,6 @@
-import { c as create_ssr_component, a as subscribe, o as onDestroy, e as escape } from "../../../../immutable/chunks/index-e5660c7e.js";
-import { p as page } from "../../../../immutable/chunks/stores-a24bc3ab.js";
-import { b as tpSeconds, c as tpScore, t as theme, d as tpCorrectWords, e as tpWrongWords } from "../../../../immutable/chunks/store-7be1707a.js";
+import { c as create_ssr_component, a as subscribe, o as onDestroy, e as escape } from "../../../../_app/immutable/chunks/index-d4ff654f.js";
+import { p as page } from "../../../../_app/immutable/chunks/stores-4971bce0.js";
+import { b as tpSeconds, c as tpScore, t as theme, d as tpCorrectWords, e as tpWrongWords } from "../../../../_app/immutable/chunks/store-0760e45a.js";
 const score_svelte_svelte_type_style_lang = "";
 const css = {
   code: ".container.svelte-1954ojp{width:300px;position:absolute;top:50%;left:50%;transform:translate(-50%, -50%)}canvas.svelte-1954ojp{margin:auto}h3.svelte-1954ojp{display:flex;justify-content:space-between}p.svelte-1954ojp{color:var(--subtext);text-align:center;margin-top:3rem}code.svelte-1954ojp{padding:2px 8px;background:none}code.svelte-1954ojp:not(.placeholder){background:var(--surface);color:var(--subtext);border-radius:4px}",
@@ -32,16 +32,19 @@ const Score = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     let arcLength = wpm / 200 * 1.5 + 0.75;
     let end = arcLength * Math.PI;
     timerRunning = true;
-    animationTimer = setInterval(() => {
-      drawArc(wpmCurrent, canvas, current);
-      current += end / 360;
-      if (wpmCurrent < wpm)
-        wpmCurrent++;
-      if (current >= end) {
-        clearInterval(animationTimer);
-        timerRunning = false;
-      }
-    }, 10);
+    animationTimer = setInterval(
+      () => {
+        drawArc(wpmCurrent, canvas, current);
+        current += end / 360;
+        if (wpmCurrent < wpm)
+          wpmCurrent++;
+        if (current >= end) {
+          clearInterval(animationTimer);
+          timerRunning = false;
+        }
+      },
+      10
+    );
   };
   const drawArc = (wpm, canvas2, angleEnd) => {
     let ctx = canvas2.getContext("2d");

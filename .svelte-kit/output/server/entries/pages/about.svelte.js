@@ -1,4 +1,4 @@
-import { c as create_ssr_component } from "../../immutable/chunks/index-e5660c7e.js";
+import { c as create_ssr_component } from "../../_app/immutable/chunks/index-d4ff654f.js";
 const about_svelte_svelte_type_style_lang = "";
 const css = {
   code: 'a.svelte-2enxad{text-decoration:none;transition:color 0.4s ease;color:var(--link)}hr.svelte-2enxad{background:var(--surface);border:none;height:2px}pre.svelte-2enxad{background:var(--surface);padding:10px 16px;border-radius:12px;overflow-x:scroll}code.svelte-2enxad{background:var(--surface);padding:0 4px;border-radius:4px;font-family:"Poppins", monospace}',

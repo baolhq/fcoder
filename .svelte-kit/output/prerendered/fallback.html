@@ -11,15 +11,18 @@
     />
     <title>FCoder</title>
     <meta http-equiv="content-security-policy" content="">
-	<link rel="modulepreload" href="/_app/immutable/start-35688a68.js">
-	<link rel="modulepreload" href="/_app/immutable/chunks/index-94d693ab.js">
-	<link rel="modulepreload" href="/_app/immutable/chunks/index-1ec7f5d9.js">
-	<link rel="modulepreload" href="/_app/immutable/chunks/singletons-cdeec3fd.js">
+	<link rel="modulepreload" href="/_app/immutable/start-a7b945c1.js">
+	<link rel="modulepreload" href="/_app/immutable/chunks/index-326e3273.js">
+	<link rel="modulepreload" href="/_app/immutable/chunks/index-72f26e97.js">
+	<link rel="modulepreload" href="/_app/immutable/chunks/singletons-eca981c1.js">
   </head>
   <body>
     <div id="app">
 		<script type="module" data-sveltekit-hydrate="45h">
-		import { start } from "/_app/immutable/start-35688a68.js";
+		import { set_public_env, start } from "/_app/immutable/start-a7b945c1.js";
+
+		set_public_env({});
+
 		start({
 			target: document.querySelector('[data-sveltekit-hydrate="45h"]').parentNode,
 			paths: {"base":"","assets":""},

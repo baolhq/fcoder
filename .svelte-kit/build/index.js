@@ -3,6 +3,8 @@ import root from '__GENERATED__/root.svelte';
 import { respond } from '../runtime/server/index.js';
 import { set_paths, assets, base } from '../runtime/paths.js';
 import { set_prerendering } from '../runtime/env.js';
+import { set_private_env } from '../runtime/env-private.js';
+import { set_public_env } from '../runtime/env-public.js';
 
 const template = ({ head, body, assets, nonce }) => "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"utf-8\" />\n    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=UTF-8\" />\n    <link rel=\"icon\" href=\"" + assets + "/favicon.png\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n    <meta\n      name=\"description\"\n      content=\"A minimal blog page built with SvelteKit\"\n    />\n    <title>FCoder</title>\n    " + head + "\n  </head>\n  <body>\n    <div id=\"app\">" + body + "</div>\n\n    <script\n      type=\"module\"\n      src=\"https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js\"\n    ></script>\n    <script\n      nomodule\n      src=\"https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js\"\n    ></script>\n  </body>\n</html>\n";
 
@@ -45,11 +47,12 @@ export class Server {
 			manifest,
 			method_override: {"parameter":"_method","allowed":[]},
 			paths: { base, assets },
-			prefix: assets + '/_app/',
+			prefix: assets + '/',
 			prerender: {
 				default: false,
 				enabled: true
 			},
+			public_env: {},
 			read,
 			root,
 			service_worker: null,
@@ -58,6 +61,19 @@ export class Server {
 			template_contains_nonce: false,
 			trailing_slash: "never"
 		};
+	}
+
+	init({ env }) {
+		const entries = Object.entries(env);
+
+		const prv = Object.fromEntries(Object.entries(env).filter(([k]) => !k.startsWith('PUBLIC_')));
+
+		const pub = Object.fromEntries(Object.entries(env).filter(([k]) => k.startsWith('PUBLIC_')));
+
+		set_private_env(prv);
+		set_public_env(pub);
+
+		this.options.public_env = pub;
 	}
 
 	async respond(request, options = {}) {

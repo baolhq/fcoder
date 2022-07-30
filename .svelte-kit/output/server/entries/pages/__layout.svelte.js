@@ -1,6 +1,6 @@
-import { c as create_ssr_component, a as subscribe, e as escape, b as add_attribute, v as validate_component } from "../../immutable/chunks/index-e5660c7e.js";
-import { i as isMenuOpen, t as theme, a as isMobile } from "../../immutable/chunks/store-7be1707a.js";
-/* empty css                                                                     */const MenuIcon_svelte_svelte_type_style_lang = "";
+import { c as create_ssr_component, a as subscribe, e as escape, b as add_attribute, v as validate_component } from "../../_app/immutable/chunks/index-d4ff654f.js";
+import { i as isMenuOpen, t as theme, a as isMobile } from "../../_app/immutable/chunks/store-0760e45a.js";
+/* empty css                                                                          */const MenuIcon_svelte_svelte_type_style_lang = "";
 const css$2 = {
   code: ".menu-icon.svelte-1h9xoav.svelte-1h9xoav{background-color:transparent;border:none;cursor:pointer;display:flex;padding:0;transform:scale(0.4);position:fixed;top:0;left:0}.line.svelte-1h9xoav.svelte-1h9xoav{fill:none;stroke:var(--fg);stroke-width:6;transition:stroke-dasharray 400ms cubic-bezier(0.4, 0, 0.2, 1),\n      stroke-dashoffset 400ms cubic-bezier(0.4, 0, 0.2, 1)}.line1.svelte-1h9xoav.svelte-1h9xoav{stroke-dasharray:60 207;stroke-width:6}.line2.svelte-1h9xoav.svelte-1h9xoav{stroke-dasharray:60 60;stroke-width:6}.line3.svelte-1h9xoav.svelte-1h9xoav{stroke-dasharray:60 207;stroke-width:6}.opened.svelte-1h9xoav .line1.svelte-1h9xoav{stroke-dasharray:90 207;stroke-dashoffset:-134;stroke-width:6}.opened.svelte-1h9xoav .line2.svelte-1h9xoav{stroke-dasharray:1 60;stroke-dashoffset:-30;stroke-width:6}.opened.svelte-1h9xoav .line3.svelte-1h9xoav{stroke-dasharray:90 207;stroke-dashoffset:-134;stroke-width:6}@media screen and (max-width: 500px){.menu-icon.svelte-1h9xoav.svelte-1h9xoav{display:none}}",
   map: null
@@ -33,7 +33,11 @@ const Menu = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     <a href="${"/tags"}" title="${"Tags"}" class="${"svelte-cjmq62"}"><ion-icon name="${"pricetag-outline"}" class="${"svelte-cjmq62"}"></ion-icon></a>
     <a href="${"/typ3r"}" title="${"Typ3r"}" class="${"svelte-cjmq62"}"><ion-icon name="${"speedometer-outline"}" class="${"svelte-cjmq62"}"></ion-icon></a>
     <a href="${"/typ3r/challenge"}" title="${"Challenge"}" class="${"svelte-cjmq62"}"><ion-icon name="${"podium-outline"}" class="${"svelte-cjmq62"}"></ion-icon></a>
-    <button title="${"Toggle Dark Mode"}" class="${"svelte-cjmq62"}"><ion-icon${add_attribute("name", $theme === "light" ? "partly-sunny-outline" : "moon-outline", 0)} class="${"svelte-cjmq62"}"></ion-icon></button>
+    <button title="${"Toggle Dark Mode"}" class="${"svelte-cjmq62"}"><ion-icon${add_attribute(
+    "name",
+    $theme === "light" ? "partly-sunny-outline" : "moon-outline",
+    0
+  )} class="${"svelte-cjmq62"}"></ion-icon></button>
     <a href="${"/about"}" title="${"About"}" class="${"svelte-cjmq62"}"><ion-icon name="${"help-outline"}" class="${"svelte-cjmq62"}"></ion-icon></a></div>` : ``}`;
 });
 const PageTransition = create_ssr_component(($$result, $$props, $$bindings, slots) => {

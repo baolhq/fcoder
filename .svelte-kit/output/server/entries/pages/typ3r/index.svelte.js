@@ -1,7 +1,7 @@
-import { c as create_ssr_component, i as is_promise, n as noop, v as validate_component } from "../../../immutable/chunks/index-e5660c7e.js";
-import { T as TypingBox } from "../../../immutable/chunks/TypingBox-c9eed7d3.js";
-import { S as Spinner } from "../../../immutable/chunks/Spinner-e13eff88.js";
-/* empty css                                                                        */let randomApi = "https://api.quotable.io/random";
+import { c as create_ssr_component, i as is_promise, n as noop, v as validate_component } from "../../../_app/immutable/chunks/index-d4ff654f.js";
+import { T as TypingBox } from "../../../_app/immutable/chunks/TypingBox-830d9764.js";
+import { S as Spinner } from "../../../_app/immutable/chunks/Spinner-5f31738a.js";
+/* empty css                                                                             */let randomApi = "https://api.quotable.io/random";
 const Typ3r = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   const fetchRandomQuote = async () => {
     let res = await fetch(randomApi);

@@ -2,6 +2,6 @@ import * as module from '../entries/pages/typ3r/score.svelte.js';
 
 export { module };
 export const index = 12;
-export const file = 'immutable/pages/typ3r/score.svelte-1867a3a0.js';
-export const imports = ["immutable/pages/typ3r/score.svelte-1867a3a0.js","immutable/chunks/index-94d693ab.js","immutable/chunks/index-b74a06b3.js","immutable/chunks/stores-3bbf04d8.js","immutable/chunks/navigation-88dbfef8.js","immutable/chunks/singletons-cdeec3fd.js","immutable/chunks/store-87ee3f59.js","immutable/chunks/index-1ec7f5d9.js"];
-export const stylesheets = ["immutable/assets/score-397b30de.css"];
+export const file = '_app/immutable/pages/typ3r/score.svelte-05dcef00.js';
+export const imports = ["_app/immutable/pages/typ3r/score.svelte-05dcef00.js","_app/immutable/chunks/index-326e3273.js","_app/immutable/chunks/index-6724a30a.js","_app/immutable/chunks/stores-4fc4bf2e.js","_app/immutable/chunks/navigation-75a744b1.js","_app/immutable/chunks/singletons-eca981c1.js","_app/immutable/chunks/store-c0b6f439.js","_app/immutable/chunks/index-72f26e97.js"];
+export const stylesheets = ["_app/immutable/assets/score-397b30de.css"];
