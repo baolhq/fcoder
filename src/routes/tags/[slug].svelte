@@ -1,28 +1,14 @@
 <script>
   import BlogCard from "$lib/components/BlogCard.svelte";
-  import { onMount } from "svelte";
   import { page } from "$app/stores";
-  import { blogList } from "../../store.js";
+  import { getBlogs } from "$lib/scripts/db";
 
-  let blogs = [];
   let tag = $page.params.slug;
 
-  onMount(async () => {
-    // If blog list is empty fetch from db
-    if ($blogList.length === 0) await fetchData();
-
-    blogs = filterByTag(tag, $blogList);
-  });
-
   const fetchData = async () => {
-    let response = await fetch("/blogs.json");
-    let data = await response.json();
-    blogList.set(Object.values(data));
-
-    let keyList = Object.keys(data);
-    for (let i = 0; i < keyList.length; i++) {
-      Object.assign($blogList[i], { slug: keyList[i] });
-    }
+    let res = await getBlogs();
+    let blogs = filterByTag(tag, res);
+    return blogs;
   };
 
   // Filter blogs by tag
@@ -30,7 +16,6 @@
     if (!tagFilter) return blogs;
 
     let result = [];
-
     blogs.forEach((blog) => {
       let isContainsTag = false;
 
@@ -52,6 +37,8 @@
   <title>Tagged with "{tag}" - FCoder</title>
 </svelte:head>
 
-{#each blogs as blog}
-  <BlogCard slug={blog.slug} title={blog.title} />
-{/each}
+{#await fetchData() then blogs}
+  {#each blogs as blog}
+    <BlogCard slug={blog.slug} title={blog.title} />
+  {/each}
+{/await}

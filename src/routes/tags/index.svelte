@@ -1,5 +1,6 @@
 <script>
   import { onMount } from "svelte";
+  import { getBlogs } from "$lib/scripts/db";
 
   let tagList = [];
   onMount(async () => {
@@ -8,12 +9,10 @@
 
   // Fetch tag list from blog.json and return array of tags
   const fetchTagList = async () => {
-    let response = await fetch("/blogs.json");
-    let data = await response.json();
-    let blogList = Object.values(data);
+    let res = await getBlogs();
     let result = [];
 
-    blogList.forEach((blog) => {
+    res.forEach((blog) => {
       blog.tags.forEach((tag) => {
         // Only add non-existing tag
         if (!result.includes(tag)) result = [...result, tag];

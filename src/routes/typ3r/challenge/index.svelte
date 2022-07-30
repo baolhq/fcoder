@@ -42,12 +42,13 @@
 </svelte:head>
 
 <div class="container">
+  <h1>Challenge</h1>
   <div class="wrapper">
     <input
       type="text"
       id="code"
       bind:value={inputVal}
-      placeholder="Enter challenge code here"
+      placeholder="Enter code here"
       on:keyup={(e) => handleKeyUp(e)}
     />
 
@@ -67,6 +68,11 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+  }
+  h1 {
+    text-align: center;
+    font-size: 4em;
+    margin: 2rem;
   }
   .wrapper {
     position: relative;

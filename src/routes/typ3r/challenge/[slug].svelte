@@ -9,8 +9,8 @@
 
   const fetchChallenge = async () => {
     let res = await getChallenge($page.params.slug);
-    title = res.data().title;
-    return res.data();
+    title = res.title;
+    return res;
   };
 </script>
 
