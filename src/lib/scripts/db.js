@@ -8,14 +8,13 @@ import {
 } from "firebase/firestore/lite";
 import { getStorage, ref, getDownloadURL, listAll } from "firebase/storage";
 
-// TODO: Migrate configurations to env
 const firebaseConfig = {
-  apiKey: "AIzaSyBjN7uzlDFRQz2gkBjmRFTXXw9j-xePMM0",
-  authDomain: "fcoder-8dfad.firebaseapp.com",
-  projectId: "fcoder-8dfad",
-  storageBucket: "fcoder-8dfad.appspot.com",
-  messagingSenderId: "121613056643",
-  appId: "1:121613056643:web:d221a97f16fb5aff9e39b6",
+  apiKey: import.meta.env.VITE_API_KEY,
+  authDomain: import.meta.env.VITE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_APP_ID,
 };
 
 const app = initializeApp(firebaseConfig);
