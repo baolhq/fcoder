@@ -27,8 +27,13 @@
     playArcAnimation();
 
     document.addEventListener("keydown", (e) => {
+      // Restart the test
+      if (e.key === "Tab") {
+        e.preventDefault();
+        goto("/typ3r");
+      }
       // Prevent f5 on this page because it may lead to losing data
-      if (e.key === "F5" && $page.url.pathname === "/typ3r/score") {
+      if (e.key === "F5") {
         e.preventDefault();
         playArcAnimation();
       }

@@ -28,7 +28,7 @@
 
     document.addEventListener("keydown", (e) => {
       // Prevent f5 on this page because it may lead to losing data
-      if (e.key === "F5" && $page.url.pathname === "/typ3r/score") {
+      if (e.key === "F5") {
         e.preventDefault();
         playArcAnimation();
       }
