@@ -1,7 +1,7 @@
 <script>
   import { onMount, tick } from "svelte";
   import { goto } from "$app/navigation";
-  import { rot13, buildUrl } from "$lib/scripts/utils";
+  import { rot13 } from "$lib/scripts/utils";
   import {
     tpScore,
     tpSeconds,

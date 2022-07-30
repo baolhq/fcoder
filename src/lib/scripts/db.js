@@ -8,6 +8,7 @@ import {
 } from "firebase/firestore/lite";
 import { getStorage, ref, getDownloadURL, listAll } from "firebase/storage";
 
+// TODO: Migrate configurations to env
 const firebaseConfig = {
   apiKey: "AIzaSyBjN7uzlDFRQz2gkBjmRFTXXw9j-xePMM0",
   authDomain: "fcoder-8dfad.firebaseapp.com",
@@ -24,6 +25,8 @@ const storage = getStorage(app);
 const challengesRef = collection(db, "challenges");
 const blogsRef = collection(db, "blogs");
 
+// Get challenge by code
+// return: null if no challenge found, otherwise the first one
 const getChallenge = async (code) => {
   const q = query(challengesRef, where("code", "==", code));
   const res = [];
@@ -35,6 +38,8 @@ const getChallenge = async (code) => {
   return res[0];
 };
 
+// Get all blogs
+// return: array of blogs
 const getBlogs = async () => {
   const res = [];
   const snapshot = await getDocs(blogsRef);
@@ -43,6 +48,8 @@ const getBlogs = async () => {
   return res;
 };
 
+// Get blog by slug
+// return: blug content or empty string if not found
 const getBlog = async (slug) => {
   let result = "";
 
