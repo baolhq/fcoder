@@ -1,5 +1,6 @@
 <script>
   import { onMount, tick } from "svelte";
+  import { fade } from "svelte/transition";
   import { goto } from "$app/navigation";
   import { rot13 } from "$lib/scripts/utils";
   import {
@@ -117,7 +118,7 @@
   };
 </script>
 
-<div class="container">
+<div class="container" in:fade={{ duration: 400 }}>
   <div class="form">
     <div class="content">{@html content}</div>
     <label for="typer">{@html placeholder}</label>
